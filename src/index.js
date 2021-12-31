@@ -4,10 +4,39 @@ const server = new ApolloServer({
   typeDefs: gql`
     type Query {
       user: User
+      users: [User!]!
+    }
+
+    type User {
+      id: ID!
+      userName: String!
     }
   `,
   resolvers: {
-    Query: {},
+    Query: {
+      user: () => {
+        return {
+          id: 'asdf34',
+          userName: 'ericksondutra',
+        };
+      },
+      users: () => {
+        return [
+          {
+            id: '1',
+            userName: 'erick1',
+          },
+          {
+            id: '2',
+            userName: 'erick2',
+          },
+          {
+            id: '3',
+            userName: 'erick3',
+          },
+        ];
+      },
+    },
   },
 });
 
