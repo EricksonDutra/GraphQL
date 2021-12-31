@@ -232,5 +232,8 @@
           "command": "code -r ~/Development/custom-cspell-dictionary.txt; exit" // This is executed in the terminal.
         }
       ]
-    }
+    },
+    "cSpell.words": [
+      "typedefs"
+    ]
   }
