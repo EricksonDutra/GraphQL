@@ -9,6 +9,12 @@ const posts = async (_, { input }, { getPosts }) => {
   const response = await getPosts('/?' + apiFiltersInput);
   return response.json();
 };
+
+const user = async ({ userId }, _, { userDataLoader }) => {
+  return userDataLoader.load(userId);
+};
+
 export const postResolvers = {
   Query: { post, posts },
+  Post: { user },
 };

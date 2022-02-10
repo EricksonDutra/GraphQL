@@ -5,14 +5,12 @@ export const postTypeDefs = gql`
     post(id: ID!): Post!
     posts(input: ApiFiltersInput): [Post!]!
   }
-
   type Post {
     id: ID!
     title: String!
     body: String!
-    # user: User!
+    user: User!
     indexRef: Int!
     createdAt: String!
-    unixTimestamp: String!
   }
 `;
